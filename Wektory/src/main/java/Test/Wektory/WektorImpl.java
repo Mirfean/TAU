@@ -1,7 +1,13 @@
 package Test.Wektory;
 
+import java.util.List;
+
 public interface WektorImpl {
 
-	void add(Wektor wektor2);
-	void add2(Wektor wektor, Wektor wektor2);
+	List<Integer> add(Wektor wektor2);
+	Wektor add(Wektor wektor, Wektor wektor2);
+	List<Integer> getValues();
+	void setValues(List<Integer> values);
+	
+	
 }
