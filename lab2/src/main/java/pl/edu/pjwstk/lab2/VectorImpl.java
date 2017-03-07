@@ -34,4 +34,7 @@ public class VectorImpl {
 		VectorImpl wektor3 = new VectorImpl(wektor.add(wektor2));
 		return wektor3;
 	}
+	
+	List<Integer> sub(VectorImpl wektor2){return this.values;}
+
 }

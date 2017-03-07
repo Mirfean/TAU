@@ -9,6 +9,7 @@ public interface Vector {
 	VectorImpl add(VectorImpl wektor, VectorImpl wektor2);
 	List<Integer> getValues();
 	void setValues(List<Integer> values);
+	List<Integer> sub(VectorImpl wektor2);
 	
 	
 }
