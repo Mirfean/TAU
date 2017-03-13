@@ -35,6 +35,14 @@ public class VectorImpl {
 		return wektor3;
 	}
 	
-	List<Integer> sub(VectorImpl wektor2){return this.values;}
+	List<Integer> sub(VectorImpl wektor2){
+		if(this.values.size() == wektor2.values.size())
+		{
+			for(int i=0;i<this.values.size();i++){
+				this.values.set(i, this.values.get(i)-wektor2.values.get(i));
+			}
+		}
+		return this.values;
+	}
 
 }
