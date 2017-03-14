@@ -5,9 +5,6 @@ import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -16,7 +13,7 @@ import org.junit.runners.JUnit4;
 public class WektorTest {
 	
 	@Test
-    public void AddTest() {	
+    public void addTest() {	
 		List<Integer> ListTestWek1 = Arrays.asList(2,4,6);
 		List<Integer> ListTestWek2 = Arrays.asList(3,6,9);
 		List<Integer> ListTest3 = Arrays.asList(8,16,24);		//Oczekiwany wynik testu #1
@@ -28,7 +25,7 @@ public class WektorTest {
 	}
 	
 	@Test
-    public void AddTest2() {
+    public void addTest2() {
 		
 		List<Integer> ListTestWek1 = Arrays.asList(2,4,6);
 		List<Integer> ListTestWek2 = Arrays.asList(3,6,9);
@@ -40,7 +37,7 @@ public class WektorTest {
 	}
 	
 	@Test (expected=NullPointerException.class)
-    public void SubTestNull() {
+    public void subTestNull() {
 		List<Integer> ListTest1 = Arrays.asList(2,4,6);
 		//List<Integer> ListTest2 = Arrays.asList(3,6,9);
 		List<Integer> ListTest3 = Arrays.asList(5,10,15);		
@@ -51,7 +48,7 @@ public class WektorTest {
 	}
 	
 	@Test
-    public void SubTest() {
+    public void subTest() {
 		
 		List<Integer> ListTest1 = Arrays.asList(2,4,6);
 		List<Integer> ListTest2 = Arrays.asList(3,6,9);
@@ -59,7 +56,7 @@ public class WektorTest {
 		VectorImpl wek1 = new VectorImpl(ListTest1);					//Testowy Wektor #1
 		VectorImpl wek2 = new VectorImpl(ListTest2);					//Testowy Wektor #2
 		VectorImpl wek3 = new VectorImpl(ListTest3);					//Wektor #1 + #2
-		wek3.setValues(wek3.sub(wek2));													// #3 - #2 should be #1
+		wek3.setValues(wek3.sub(wek2));									// #3 - #2 should be #1
 		assertEquals("Metoda sub",wek3.values,wek1.values);
 	}
 	
