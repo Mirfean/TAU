@@ -1,9 +1,14 @@
 package pl.edu.pjwstk.lab3;
 
-import java.util.Calendar;
+public class Czas {
+	
+	String czas;
 
-public interface Czas {
-	
-	boolean CzasEqual(Calendar calendar);
-	
+	public String getCzas() {
+		return czas;
+	}
+
+	public void setCzas(String czas) {
+		this.czas = czas;
+	}
 }
