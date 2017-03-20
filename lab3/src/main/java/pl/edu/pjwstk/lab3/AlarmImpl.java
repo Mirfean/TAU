@@ -5,6 +5,10 @@ public class AlarmImpl {
 	String time;
 	Boolean active;
 	
+	AlarmImpl(String t,boolean a){
+		time = t;
+		active = a;
+	}
 	public String getTime() {
 		return time;
 	}
@@ -17,10 +21,7 @@ public class AlarmImpl {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-	public void setAlarm(String t,boolean a){
-		time = t;
-		active = a;
-	}
+	
 	
 
 }

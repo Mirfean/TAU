@@ -1,14 +1,6 @@
 package pl.edu.pjwstk.lab3;
 
-public class Czas {
+public interface Czas {
 	
-	String czas;
-
-	public String getCzas() {
-		return czas;
-	}
-
-	public void setCzas(String czas) {
-		this.czas = czas;
-	}
+	public String getCzas();
 }

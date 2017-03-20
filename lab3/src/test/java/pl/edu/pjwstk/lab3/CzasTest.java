@@ -21,7 +21,7 @@ public class CzasTest {
     public EasyMockRule rule = new EasyMockRule(this);
 	
 	@TestSubject
-    public Clock clock = new ClockImpl();
+    public ClockImpl clock = new ClockImpl();
 	
 	@Mock
     private Czas mockCzas;
@@ -36,21 +36,47 @@ public class CzasTest {
 
 	@Test
 	public void shouldRingTest01(){
-		expect(mockCzas.getCzas()).andReturn("01:10").andReturn("13:10");
+		expect(mockCzas.getCzas()).andReturn("01:10").times(2);
         replay(mockCzas);
-        assertEquals(clock.shouldRing(), false);
+        //assertEquals(clock.shouldRing(), false);
         clock.addAlarmTime("01:10");
-        assertEquals(clock.shouldRing(), true);
-        assertEquals(clock.shouldRing(), false);
+        clock.czas = mockCzas;
+        assertEquals(clock.shouldRing(),true);
+        assertEquals(clock.shouldRing(),false);
         verify(mockCzas);
 	}
 	
 	@Test
 	public void shouldRingTest02(){
-		expect(mockCzas.getCzas()).andReturn("01:10").andReturn("15:15").andReturn("13:10");
+		expect(mockCzas.getCzas()).andReturn("15:15").times(3);
 		replay(mockCzas);
-		
+		clock.addAlarmTime("15:15");
+		assertEquals(clock.shouldRing(),true);
+		clock.addAlarmTime("15:15");
+		assertEquals(clock.shouldRing(),true);
 	}
+	
+	@Test
+	public void addAlarmTimeTest(){
+		expect(mockCzas.getCzas()).andReturn("13:10").andReturn("01:10").andReturn("13:10").andReturn("11:11");
+		replay(mockCzas);
+		clock.addAlarmTime(mockCzas.getCzas());
+		clock.addAlarmTime(mockCzas.getCzas());
+		assertEquals(clock.AlarmList.get(0).time,mockCzas.getCzas());
+		assertNotEquals(clock.AlarmList.get(1).time,mockCzas.getCzas());
+		verify(mockCzas);
+	}
+	
+	@Test
+	public void clearAlarmTimeTest(){
+			
+	}	
+	
+	
+//	@Test
+//	public void 
+	
+	
 	
 
 //	@Test
