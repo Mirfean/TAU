@@ -15,7 +15,7 @@ import pl.edu.pjwstk.lab3.ClockImpl;
 import pl.edu.pjwstk.lab3.Czas;
 
 @RunWith(EasyMockRunner.class)
-public class CzasTest {
+public class ClockTest {
 	
 	@Rule
     public EasyMockRule rule = new EasyMockRule(this);
@@ -69,7 +69,14 @@ public class CzasTest {
 	
 	@Test
 	public void clearAlarmTimeTest(){
-			
+		expect(mockCzas.getCzas()).andReturn("13:10").times(2).andReturn("11:15").times(3);
+		replay(mockCzas);
+		clock.addAlarmTime(mockCzas.getCzas());
+		assertEquals(clock.AlarmList.get(0).time,mockCzas.getCzas());
+		clock.addAlarmTime(mockCzas.getCzas());
+		clock.clearAlarmTime(mockCzas.getCzas());
+		assertEquals(clock.AlarmList.contains(mockCzas.getCzas()),false);
+		verify(mockCzas);
 	}	
 	
 	

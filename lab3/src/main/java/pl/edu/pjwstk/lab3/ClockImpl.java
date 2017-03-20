@@ -27,11 +27,8 @@ public class ClockImpl implements Clock {
 		}else { AlarmList.add(new AlarmImpl(czas,true));}
 	}
 	public void clearAlarmTime(String czas) {
-		
-		
-		
+		if(AlarmList.contains(czas)){
+			AlarmList.remove((AlarmList.indexOf(czas)));
 	}
-	
-	
-
+	}
 }
