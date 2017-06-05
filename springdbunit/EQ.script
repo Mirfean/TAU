@@ -1,0 +1,17 @@
+CREATE TABLE Character (
+
+id int primary key,
+Name varchar(50),
+Race varchar(50),
+Carrer varchar(50),
+Lvl int
+);
+
+CREATE TABLE Weapon (
+
+id int primary key,
+Name varchar(50),
+Attack int,
+Attack_speed Decimal(5,2),
+Is_magic Boolean
+);

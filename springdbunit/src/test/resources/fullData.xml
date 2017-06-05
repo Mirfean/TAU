@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <WEAPON ID="3" NAME="Pickaxe" ATTACK="80" ATTACK_SPEED="0.8" IS_MAGIC="false"/>
+  <WEAPON ID="4" NAME="Silver Sword +1" ATTACK="68" ATTACK_SPEED="1.5" IS_MAGIC="true"/>
+  <CHARACTER ID="3" NAME="Romek" RACE="Human" CARRIER="rat-catcher" LVL="43"/>
+  <CHARACTER ID="4" NAME="Ertles" RACE="Elven" CARRIER="Mage" LVL="1"/>
+  <CHARACTER_WEAPON Weapon_ID="4" CHARACTER_ID="3"/>
+</dataset>

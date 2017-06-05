@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <CHARACTER ID="1" NAME="Lorenzo" RACE="Elementalist" CARRIER="Fencer" LVL="12"/>
+  <CHARACTER ID="2" NAME="Tyriana" RACE="Dwarf" CARRIER="Priest" LVL="78"/>
+  <CHARACTER ID="3" NAME="Romek" RACE="Human" CARRIER="rat-catcher" LVL="43"/>
+  <CHARACTER ID="4" NAME="Ertles" RACE="Elven" CARRIER="Mage" LVL="1"/>
+</dataset>
