@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-	<CHARACTER ID="2" NAME="Romek" RACE="Human" CARRER="Rat-catcher" LVL="43"/> 
+	<CHARACTER ID="3" NAME="Romek" RACE="Human" CARRER="Rat-catcher" LVL="43"/>
+	<CHARACTER ID="4" NAME="xyz" RACE="Robot" CARRER="Wanderer" LVL="13"/>  
   	<WEAPON ID="2" NAME="Pickaxe" ATTACK="80" ATTACKSPEED="0.8"/>
 </dataset>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<CHARACTER ID="1" NAME="Yorwin" RACE="Dwarf" CARRER="DragonSlayer" LVL="88"/> 
+	<CHARACTER ID="2" NAME="Argh" RACE="Gnoll" LVL="20"/>     
+	<CHARACTER ID="3" NAME="Romek" RACE="Human" LVL="43"/>
+  	<CHARACTER ID="4" NAME="xyz" RACE="Robot"  LVL="13"/> 
+</dataset>
+<!--  CARRER="RatCatcher" CARRER="Wanderer" -->

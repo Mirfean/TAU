@@ -30,7 +30,7 @@ public class Weapon {
 		this.attackSpeed = as;
 	}
 	
-	@Column(unique = true, nullable = false)
+	@Column(unique = true)
 	public String getName() {
 		return name;
 	}

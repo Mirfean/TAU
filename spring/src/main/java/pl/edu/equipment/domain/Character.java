@@ -30,7 +30,7 @@ public class Character {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	@Column(unique = true, nullable = false)
+	@Column(unique = true)
 	public String getName() {
 		return name;
 	}

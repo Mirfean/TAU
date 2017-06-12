@@ -6,6 +6,8 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
+
+import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,21 +35,54 @@ import org.apache.log4j.Logger;
     DbUnitTestExecutionListener.class })
 public class EqManagerDBUnitTest {
 
-
 	@Autowired
 	EquipmentManager eqManager;
-
+	
 	@Test
-	@DatabaseSetup("/fullData.xml")
-	@ExpectedDatabase(value = "/addCharacterData.xml", 
+	@DatabaseSetup("/deleteCharacterData.xml")
+	@ExpectedDatabase(value = "/afteradd.xml", 
 	assertionMode = DatabaseAssertionMode.NON_STRICT)
-	public void getCharacterCheck() {
-		assertEquals(1, eqManager.getAllCharacters().size());
-        Character p = new Character();
-        p.setName("Torgal");
-        p.setRace("Human");
-        eqManager.addCharacter(p);
-        assertEquals(2, eqManager.getAllCharacters().size());
+	public void CharacterAddTest() {
+//		assertEquals(3, eqManager.getAllCharacters().size());
+//        Character p = new Character();
+//        p.setName("Torgal");
+//        p.setRace("Human");
+//        p.setLvl(10);
+//        eqManager.addCharacter(p);
+//        
+//        Character p2 = new Character();
+//        p2.setName("Arhg");
+//        p2.setRace("Gnoll");
+//        eqManager.addCharacter(p);
+        
+      Character character2 = new Character();
+      character2.setName("Yorwin");
+      character2.setRace("Dwarf");
+      character2.setCarrer("DragonSlayer");
+      character2.setLvl(88);
+      eqManager.addCharacter(character2);
+      
+        assertEquals(4, eqManager.getAllCharacters().size());
 
     }
+	
+	@Test
+    @DatabaseSetup("/addCharacterData.xml")
+    @ExpectedDatabase(value ="/deleteCharacterData.xml",
+    assertionMode = DatabaseAssertionMode.NON_STRICT)
+    public void CharacterDeleteTest() {
+		
+//        Character character2 = new Character();
+//        character2.setName("Yorwin");
+//        character2.setRace("Dwarf");
+//        character2.setCarrer("DragonSlayer");
+//        eqManager.addCharacter(character2);
+        
+        assertEquals(4,eqManager.getAllCharacters().size());
+        Character toDelete = eqManager.findCharacterByName("Torgal");
+        eqManager.deleteCharacter(toDelete);
+        assertEquals(3,eqManager.getAllCharacters().size());
+        
+    }
+	
 }
