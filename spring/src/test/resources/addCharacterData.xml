@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<CHARACTER ID="1" NAME="Torgal" RACE="Human"/>
+  	<CHARACTER ID="2" NAME="Romek" RACE="Human" CARRER="Rat-catcher" LVL="43"/> 
+</dataset>
