@@ -1,0 +1,17 @@
+before_install:
+  - sudo apt-get install gcc
+  - sudo apt-get install make
+  
+# Enable C++ support
+language: cpp
+
+# Compiler selection
+compiler:
+  - gcc
+
+# Go to the Root directory  
+  - cd ..
+
+# Build steps
+script:
+  - make && make tests
