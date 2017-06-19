@@ -2,8 +2,8 @@ before_install:
   - sudo apt-get install gcc
   - sudo apt-get install make
   
-# Enable C++ support
 language: cpp
+language: java
 
 # Compiler selection
 compiler:
