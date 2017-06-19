@@ -30,7 +30,7 @@ public class EquipmentManagerImplHiber implements EquipmentManager {
 	public void addCharacter(Character character) {
 		character.setId(null);
 		sessionFactory.getCurrentSession().persist(character);
-		//sessionFactory.getCurrentSession().flush();
+		sessionFactory.getCurrentSession().flush();
 	}
 
 	public void deleteCharacter(Character character) {
@@ -53,6 +53,11 @@ public class EquipmentManagerImplHiber implements EquipmentManager {
 	@SuppressWarnings("unchecked")
 	public List<Character> getAllCharacters() {
 		return sessionFactory.getCurrentSession().getNamedQuery("Character.all").list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Weapon> getAllWeapons() {
+		return sessionFactory.getCurrentSession().getNamedQuery("Weapon.findAll").list();
 	}
 
 	//Query

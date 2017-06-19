@@ -2,6 +2,8 @@ package pl.edu.equipment.service;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
@@ -38,51 +40,58 @@ public class EqManagerDBUnitTest {
 	@Autowired
 	EquipmentManager eqManager;
 	
-	@Test
+	@Test //Drugi test
 	@DatabaseSetup("/deleteCharacterData.xml")
-	@ExpectedDatabase(value = "/afteradd.xml", 
+	@ExpectedDatabase(value = "/addCharacterData2.xml", 
 	assertionMode = DatabaseAssertionMode.NON_STRICT)
 	public void CharacterAddTest() {
-//		assertEquals(3, eqManager.getAllCharacters().size());
-//        Character p = new Character();
-//        p.setName("Torgal");
-//        p.setRace("Human");
-//        p.setLvl(10);
-//        eqManager.addCharacter(p);
-//        
-//        Character p2 = new Character();
-//        p2.setName("Arhg");
-//        p2.setRace("Gnoll");
-//        eqManager.addCharacter(p);
-        
-      Character character2 = new Character();
-      character2.setName("Yorwin");
-      character2.setRace("Dwarf");
-      character2.setCarrer("DragonSlayer");
-      character2.setLvl(88);
-      eqManager.addCharacter(character2);
       
-        assertEquals(4, eqManager.getAllCharacters().size());
-
+		assertEquals(2,eqManager.getAllCharacters().size());
+		
+		Character character2 = new Character();
+		character2.setName("Dude");
+		character2.setRace("dude");
+		character2.setCarrer("chillman");
+		character2.setLvl(7);
+		
+		eqManager.addCharacter(character2);
+      
+        assertEquals(3, eqManager.getAllCharacters().size());
     }
 	
-	@Test
-    @DatabaseSetup("/addCharacterData.xml")
+	@Test		//Pierwszy test(Dlaczego???)
+    @DatabaseSetup("/startingData.xml")
     @ExpectedDatabase(value ="/deleteCharacterData.xml",
     assertionMode = DatabaseAssertionMode.NON_STRICT)
     public void CharacterDeleteTest() {
-		
-//        Character character2 = new Character();
-//        character2.setName("Yorwin");
-//        character2.setRace("Dwarf");
-//        character2.setCarrer("DragonSlayer");
-//        eqManager.addCharacter(character2);
         
-        assertEquals(4,eqManager.getAllCharacters().size());
+        assertEquals(3,eqManager.getAllCharacters().size());
         Character toDelete = eqManager.findCharacterByName("Torgal");
         eqManager.deleteCharacter(toDelete);
-        assertEquals(3,eqManager.getAllCharacters().size());
-        
+        assertEquals(2,eqManager.getAllCharacters().size());
     }
+	
+//	@Test
+//	@DatabaseSetup("/deleteCharacterData.xml")
+//	@ExpectedDatabase(value = "/giveWeaponData.xml", 
+//	assertionMode = DatabaseAssertionMode.NON_STRICT)
+//	public void WeaponAddToCharacterTest() {
+//        
+//		Character character = eqManager.findCharacterByName("Dude");
+//
+//		Weapon weapon = new Weapon();
+//		weapon.setName("AntimatterAxe");
+//		weapon.setAttack(1234);
+//		weapon.setAttackSpeed(2.2);
+//
+//		Long weaponId = eqManager.addNewWeapon(weapon);
+//
+//		eqManager.makeWeaponUsed(character.getId(), weaponId);
+//
+//		assertEquals(2, eqManager.getAllWeapons().size());
+//        
+//	}
+	
+	
 	
 }

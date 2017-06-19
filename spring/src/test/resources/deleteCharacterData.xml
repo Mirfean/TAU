@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-	<!-- <CHARACTER ID="1" NAME="Torgal" RACE="Human" LVL="10"/> -->
-	<CHARACTER ID="2" NAME="Argh" RACE="Gnoll" LVL="20"/>     
+	<!-- <CHARACTER ID="1" NAME="Torgal" RACE="Human" LVL="10"/> -->     
   	<CHARACTER ID="3" NAME="Romek" RACE="Human" CARRER="RatCatcher" LVL="43"/> 
   	<CHARACTER ID="4" NAME="xyz" RACE="Robot" CARRER="Wanderer" LVL="13"/> 
+  	
+  	
+  	<WEAPON ID="1" NAME="Pickaxe" ATTACK="80" ATTACKSPEED="0.8"/>
 </dataset>
 
+<!-- <WEAPON ID="1" NAME="AntimatterAxe" ATTACK="1234" ATTACKSPEED="2.2" ISUSED = "true"/> -->

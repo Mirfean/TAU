@@ -17,7 +17,8 @@ public interface EquipmentManager {
 	List<Weapon> getUnusedWeapons();
 	void lostWeapon(Character character, Weapon weapon);
 	Weapon findWeaponById(Long id);
-
+	
+	public List<Weapon> getAllWeapons();
 	List<Weapon> weaponsOfCharacter(Character character);
 	void makeWeaponUsed(Long characterId, Long weaponId);
 }

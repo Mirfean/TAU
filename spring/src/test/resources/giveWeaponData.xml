@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	    
+	<CHARACTER ID="2" NAME="Argh" RACE="Gnoll" LVL="20"/>
+	<CHARACTER ID="3" NAME="Romek" RACE="Human" LVL="43"/>
+  	<CHARACTER ID="4" NAME="xyz" RACE="Robot"  LVL="13"/>
+  	
+  	 
+  	<WEAPON ID="1" NAME="Pickaxe" ATTACK="80" ATTACKSPEED="0.8"/>
+  	<WEAPON ID="2" NAME="AntimatterAxe" ATTACK="1234" ATTACKSPEED="2.2"/>
+  	
+</dataset>
+<!--  CARRER="RatCatcher" CARRER="Wanderer" <CHAR_WEAP CHARACTER_ID="1"	WEAPON_ID="1" /> -->
+<!--    -->
