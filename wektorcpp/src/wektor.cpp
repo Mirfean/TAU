@@ -56,3 +56,5 @@ void Wektor::reverse(){
     y = -y;
     z = -z;
 }
+
+//Na na na travis
