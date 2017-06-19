@@ -1,18 +1,7 @@
-before_install:
-  - sudo apt-get install gcc
-  - sudo apt-get install make
-  
 language: cpp
-language: java
-
-# Compiler selection
-compiler:
-  - gcc-4.7
-
-# Go to the Root directory  
-  - cd ..
-
-# Build steps
+compiler: gcc
+dist: trusty
+os: linux
 script:
-  - cd wektorcpp
-  - make && make tests
+- cd wektorcpp
+- make tests
