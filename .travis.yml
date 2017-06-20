@@ -4,4 +4,4 @@ dist: trusty
 os: linux
 script:
 - cd wektorcpp
-- make tests
+- make && make tests
